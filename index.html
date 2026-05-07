@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Đinh Thị Kim Hồng</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark">HK</span>
+        <div>
+          <p class="brand-label">Portfolio</p>
+          <h1>Đinh Thị Kim Hồng</h1>
+        </div>
+      </div>
+      <button class="theme-toggle" id="themeToggle">Thay đổi theme</button>
+    </header>
+
+    <main class="content">
+      <section class="hero-card">
+        <div class="hero-text">
+          <p class="eyebrow">Xin chào, mình là</p>
+          <h2>Đinh Thị Kim Hồng</h2>
+          <p class="subtitle">Sinh viên khoa CNTT - Đồ họa kĩ thuật số</p>
+          <p class="description">Yêu thích vẽ 2D và 3D, thích tạo ra những tác phẩm dễ thương và sáng tạo.</p>
+          <div class="tags">
+            <span>Vẽ 2D</span>
+            <span>Vẽ 3D</span>
+            <span>Thiết kế đồ họa</span>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="image-card">
+            <div class="cute-illustration"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="work-section">
+        <div class="section-header">
+          <p class="section-title">Công trình đã công bố &amp; Sở thích</p>
+          <p class="section-note">Một vài điểm nổi bật phản ánh phong cách sáng tạo nhẹ nhàng và dễ thương.</p>
+        </div>
+        <div class="work-grid">
+          <article class="work-card">
+            <h3>Thích vẽ 2D</h3>
+            <p>Khả năng phác thảo nhân vật, minh hoạ tươi sáng và các tác phẩm nhiều màu sắc.</p>
+          </article>
+          <article class="work-card">
+            <h3>Thích vẽ 3D</h3>
+            <p>Tạo dựng mô hình nhẹ nhàng, phối cảnh mềm mại và hiệu ứng màu pastel.</p>
+          </article>
+          <article class="work-card">
+            <h3>Dự án đồ họa</h3>
+            <p>Thiết kế poster, banner, concept art phù hợp với xu hướng nghệ thuật trẻ trung.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const toggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
+    toggle.addEventListener('click', () => {
+      const isDark = root.classList.toggle('dark-theme');
+      toggle.textContent = isDark ? 'Chuyển sang sáng' : 'Thay đổi theme';
+    });
+  </script>
+</body>
+</html>
