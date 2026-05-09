@@ -16,7 +16,9 @@
           <h1>Đinh Thị Kim Hồng</h1>
         </div>
       </div>
-      <button class="theme-toggle" id="themeToggle">Thay đổi theme</button>
+      <button class="theme-toggle" id="themeToggle" aria-label="Chuyển đổi giao diện sáng tối">
+        🌙 Chế độ tối
+      </button>
     </header>
 
     <main class="content">
@@ -25,38 +27,17 @@
           <p class="eyebrow">Xin chào, mình là</p>
           <h2>Đinh Thị Kim Hồng</h2>
           <p class="subtitle">Sinh viên khoa CNTT - Đồ họa kĩ thuật số</p>
-          <p class="description">Yêu thích vẽ 2D và 3D, thích tạo ra những tác phẩm dễ thương và sáng tạo.</p>
+          <p class="description">Thích tạo ra những tác phẩm dễ thương và sáng tạo trong lĩnh vực đồ họa kỹ thuật số.</p>
           <div class="tags">
-            <span>Vẽ 2D</span>
-            <span>Vẽ 3D</span>
             <span>Thiết kế đồ họa</span>
+            <span>UI/UX</span>
+            <span>Web Development</span>
           </div>
         </div>
         <div class="hero-image">
           <div class="image-card">
             <div class="cute-illustration"></div>
           </div>
-        </div>
-      </section>
-
-      <section class="work-section">
-        <div class="section-header">
-          <p class="section-title">Công trình đã công bố &amp; Sở thích</p>
-          <p class="section-note">Một vài điểm nổi bật phản ánh phong cách sáng tạo nhẹ nhàng và dễ thương.</p>
-        </div>
-        <div class="work-grid">
-          <article class="work-card">
-            <h3>Thích vẽ 2D</h3>
-            <p>Khả năng phác thảo nhân vật, minh hoạ tươi sáng và các tác phẩm nhiều màu sắc.</p>
-          </article>
-          <article class="work-card">
-            <h3>Thích vẽ 3D</h3>
-            <p>Tạo dựng mô hình nhẹ nhàng, phối cảnh mềm mại và hiệu ứng màu pastel.</p>
-          </article>
-          <article class="work-card">
-            <h3>Dự án đồ họa</h3>
-            <p>Thiết kế poster, banner, concept art phù hợp với xu hướng nghệ thuật trẻ trung.</p>
-          </article>
         </div>
       </section>
 
@@ -74,6 +55,37 @@
           <div class="about-image">
             <div class="image-card">
               <div class="cute-illustration about-illust"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="creative-section">
+        <div class="creative-header">
+          <h2>Sáng tạo & Ý tưởng</h2>
+          <p>Khám phá những ý tưởng sáng tạo của tôi</p>
+        </div>
+        <div class="creative-canvas">
+          <div class="floating-shape shape-1"></div>
+          <div class="floating-shape shape-2"></div>
+          <div class="floating-shape shape-3"></div>
+          <div class="floating-shape shape-4"></div>
+          <div class="floating-shape shape-5"></div>
+          <div class="creative-content">
+            <div class="idea-card">
+              <div class="idea-icon">💡</div>
+              <h3>Thiết kế tương tác</h3>
+              <p>Tạo ra các giao diện người dùng thân thiện và hấp dẫn.</p>
+            </div>
+            <div class="idea-card">
+              <div class="idea-icon">🎨</div>
+              <h3>Màu sắc & Phong cách</h3>
+              <p>Kết hợp màu pastel và gradient để tạo cảm giác nhẹ nhàng.</p>
+            </div>
+            <div class="idea-card">
+              <div class="idea-icon">🚀</div>
+              <h3>Đổi mới kỹ thuật số</h3>
+              <p>Áp dụng công nghệ mới vào thiết kế đồ họa.</p>
             </div>
           </div>
         </div>
@@ -263,9 +275,41 @@
   <script>
     const toggle = document.getElementById('themeToggle');
     const root = document.documentElement;
+    const updateToggleText = (isDark) => {
+      toggle.textContent = isDark ? '☀️ Chế độ sáng' : '🌙 Chế độ tối';
+    };
+    updateToggleText(root.classList.contains('dark-theme'));
     toggle.addEventListener('click', () => {
       const isDark = root.classList.toggle('dark-theme');
-      toggle.textContent = isDark ? 'Chuyển sang sáng' : 'Thay đổi theme';
+      updateToggleText(isDark);
+    });
+
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections
+    document.querySelectorAll('section').forEach(section => {
+      observer.observe(section);
+    });
+
+    // Add scroll effect to hero
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const hero = document.querySelector('.hero-card');
+      if (hero) {
+        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+      }
     });
   </script>
 </body>
