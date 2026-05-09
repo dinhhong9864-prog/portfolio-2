@@ -1,0 +1,25 @@
+<svg width="320" height="320" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cubeGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#B89BFF" />
+      <stop offset="100%" stop-color="#FF8DA1" />
+    </linearGradient>
+    <linearGradient id="shadowGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.7)" />
+      <stop offset="100%" stop-color="rgba(255,255,255,0)" />
+    </linearGradient>
+  </defs>
+  <rect width="320" height="320" rx="32" fill="#0F1124"/>
+  <path d="M95 88L165 48L235 88V158L165 198L95 158V88Z" fill="url(#cubeGradient)" />
+  <path d="M95 88L165 48L165 118L95 158V88Z" fill="#8F6AE2" opacity="0.9"/>
+  <path d="M165 48L235 88V158L165 198V118L235 88Z" fill="#F483AD" opacity="0.85"/>
+  <path d="M95 158L165 198L165 268L95 228V158Z" fill="#7F59D1" opacity="0.8"/>
+  <path d="M165 198L235 158V228L165 268V198Z" fill="#F4A7C8" opacity="0.9"/>
+  <circle cx="180" cy="210" r="12" fill="#fff" opacity="0.7"/>
+  <circle cx="220" cy="120" r="8" fill="#fff" opacity="0.6"/>
+  <circle cx="120" cy="170" r="6" fill="#fff" opacity="0.6"/>
+  <path d="M85 220C85 220 115 240 165 260C215 280 235 270 235 270" stroke="rgba(255,255,255,0.12)" stroke-width="6" stroke-linecap="round"/>
+  <path d="M40 220C40 220 80 260 125 283C170 306 225 300 225 300" stroke="rgba(255,255,255,0.08)" stroke-width="8" stroke-linecap="round"/>
+  <rect x="40" y="40" width="240" height="240" rx="28" stroke="rgba(255,255,255,0.08)" stroke-width="2" />
+  <ellipse cx="160" cy="280" rx="92" ry="20" fill="url(#shadowGradient)" />
+</svg>
