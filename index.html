@@ -142,6 +142,36 @@
         </div>
       </section>
 
+      <section class="gallery-section">
+        <div class="section-header">
+          <p class="section-title">Hình ảnh minh họa</p>
+          <p class="section-note">Những ý tưởng trực quan giúp portfolio thêm sinh động.</p>
+        </div>
+        <div class="gallery-grid">
+          <article class="gallery-card">
+            <div class="gallery-image image-1"></div>
+            <div class="gallery-text">
+              <h3>Giao diện dễ thương</h3>
+              <p>Hình ảnh màu pastel tạo cảm giác thân thiện và bắt mắt.</p>
+            </div>
+          </article>
+          <article class="gallery-card">
+            <div class="gallery-image image-2"></div>
+            <div class="gallery-text">
+              <h3>Concept thiết kế</h3>
+              <p>Ý tưởng sáng tạo hiện lên qua các khối màu và hình khối mềm mại.</p>
+            </div>
+          </article>
+          <article class="gallery-card">
+            <div class="gallery-image image-3"></div>
+            <div class="gallery-text">
+              <h3>Hình minh họa kỹ thuật số</h3>
+              <p>Minh họa ảo giúp portfolio trông chuyên nghiệp và khác biệt.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <section class="skills-section">
         <div class="section-header">
           <p class="section-title">Kỹ năng &amp; Kinh nghiệm</p>
@@ -290,6 +320,23 @@
         hero.style.transform = `translateY(${scrolled * 0.5}px)`;
       }
     });
+
+    // Click animation for interactive cards
+    const interactiveCards = document.querySelectorAll('.project-card, .gallery-card');
+    interactiveCards.forEach(card => {
+      card.addEventListener('click', () => {
+        card.classList.add('clicked');
+        setTimeout(() => card.classList.remove('clicked'), 350);
+      });
+    });
+
+    const ctaButton = document.querySelector('.cta-button');
+    if (ctaButton) {
+      ctaButton.addEventListener('click', () => {
+        ctaButton.classList.add('clicked');
+        setTimeout(() => ctaButton.classList.remove('clicked'), 300);
+      });
+    }
   </script>
 </body>
 </html>
