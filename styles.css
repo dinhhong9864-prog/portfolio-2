@@ -474,7 +474,9 @@ body::selection {
 .projects-grid {
   display: grid;
   gap: 24px;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: 1fr;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .project-card {
